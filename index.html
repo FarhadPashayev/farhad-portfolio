@@ -96,23 +96,23 @@
 
   <!-- Babel Standalone for JSX transform -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script>
-    Babel.registerPreset('react-classic', {
-      presets: [[Babel.availablePresets.react, { runtime: 'classic' }]]
-    });
-  </script>
 
-  <!-- Load order: icons → data → skills (defines SectionHeader) → rest → app -->
-  <script type="text/babel" data-presets="react-classic" src="src/icons.jsx"></script>
-  <script type="text/babel" data-presets="react-classic" src="src/data.jsx"></script>
-  <script type="text/babel" data-presets="react-classic" src="src/skills.jsx"></script>
-  <script type="text/babel" data-presets="react-classic" src="src/nav.jsx"></script>
-  <script type="text/babel" data-presets="react-classic" src="src/hero.jsx"></script>
-  <script type="text/babel" data-presets="react-classic" src="src/projects.jsx"></script>
-  <script type="text/babel" data-presets="react-classic" src="src/dashboard.jsx"></script>
-  <script type="text/babel" data-presets="react-classic" src="src/tips.jsx"></script>
-  <script type="text/babel" data-presets="react-classic" src="src/contact.jsx"></script>
-  <script type="text/babel" data-presets="react-classic" src="src/tweaks.jsx"></script>
-  <script type="text/babel" data-presets="react-classic" src="src/app.jsx"></script>
+  <!-- Load JSX files manually to guarantee classic runtime and single execution -->
+  <script>
+    (async () => {
+      const files = ['icons','data','skills','nav','hero','projects','dashboard','tips','contact','tweaks','app'];
+      for (const f of files) {
+        const res = await fetch(`src/${f}.jsx`);
+        const jsx = await res.text();
+        const { code } = Babel.transform(jsx, {
+          presets: [['react', { runtime: 'classic' }]],
+          filename: f + '.jsx',
+        });
+        const el = document.createElement('script');
+        el.textContent = code;
+        document.head.appendChild(el);
+      }
+    })();
+  </script>
 </body>
 </html>
