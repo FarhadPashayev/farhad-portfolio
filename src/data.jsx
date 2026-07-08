@@ -102,6 +102,19 @@ window.DATA = {
       repo: 'github.com/farhadpasha/perf-suite',
       primaryTag: 'Load',
     },
+    {
+      id: 'vpos-simulator',
+      index: '05',
+      name: 'ISO 8583 VPOS Terminal Simulator',
+      stack: ['ISO 8583', 'TCP/IP Sockets', 'JavaScript', 'ISO 9564', 'Bitmap Parser'],
+      description: 'Browser-based Virtual POS terminal simulator built during my time at Azericard. Implements raw TCP/IP ISO 8583 messaging with a hand-written bitmap parser/packer, ISO 9564 Format-0 PIN block generation, and full LMK/TPK/TAK key management concepts. Covers Purchase (0200), Reversal (0400) and Settlement (0500) transaction flows with live field-by-field message logging.',
+      metric: 'Full Purchase · Reversal · Settlement lifecycle over raw TCP/IP',
+      metricDelta: '3 flows',
+      status: 'Prototype',
+      repo: 'Azericard — internal research',
+      primaryTag: 'Fintech',
+      featured: true,
+    },
   ],
 
   tips: [
