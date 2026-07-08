@@ -29,9 +29,12 @@ function Contact() {
             <SocialRow icon={IconMail} label="Email" handle={socials.email.handle} url={socials.email.url} />
 
             <div style={{
-              marginTop: 12, padding: '18px 20px', borderRadius: 12,
-              border: '1px solid var(--border-strong)',
-              background: 'linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005))',
+              marginTop: 12, padding: '18px 20px', borderRadius: 14,
+              border: '1px solid rgba(255,255,255,0.09)',
+              background: 'rgba(255,255,255,0.03)',
+              backdropFilter: 'blur(32px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(32px) saturate(180%)',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)',
             }}>
               <div style={{ fontFamily: 'Geist Mono', fontSize: 10, color: 'var(--text-mute)', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 10 }}>
                 Current status
@@ -45,11 +48,12 @@ function Contact() {
           {/* RIGHT: form */}
           <form onSubmit={submit} style={{
             padding: '26px 26px 22px',
-            borderRadius: 14,
-            border: '1px solid var(--border-strong)',
-            background: 'linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.005))',
-            backdropFilter: 'blur(14px)',
-            WebkitBackdropFilter: 'blur(14px)',
+            borderRadius: 18,
+            border: '1px solid rgba(255,255,255,0.09)',
+            background: 'rgba(255,255,255,0.04)',
+            backdropFilter: 'blur(48px) saturate(200%)',
+            WebkitBackdropFilter: 'blur(48px) saturate(200%)',
+            boxShadow: '0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.1)',
           }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
               <Field label="Name" value={form.name} onChange={v => setForm(f => ({ ...f, name: v }))} placeholder="Your name" />

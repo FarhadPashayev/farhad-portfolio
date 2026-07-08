@@ -52,14 +52,16 @@ function SkillCard({ skill, index }) {
       style={{
         position: 'relative',
         padding: '26px 24px 28px',
-        borderRadius: 12,
-        border: '1px solid var(--border-strong)',
-        background: 'linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005))',
-        backdropFilter: 'blur(10px)',
-        WebkitBackdropFilter: 'blur(10px)',
-        transition: 'border-color .25s, transform .25s',
-        borderColor: hovered ? 'var(--accent-glow)' : 'var(--border-strong)',
-        transform: hovered ? 'translateY(-2px)' : 'none',
+        borderRadius: 16,
+        border: hovered ? '1px solid rgba(50,205,50,0.3)' : '1px solid rgba(255,255,255,0.09)',
+        background: hovered ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.03)',
+        backdropFilter: 'blur(48px) saturate(200%)',
+        WebkitBackdropFilter: 'blur(48px) saturate(200%)',
+        boxShadow: hovered
+          ? '0 24px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.1)'
+          : '0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1)',
+        transition: 'all .3s ease',
+        transform: hovered ? 'translateY(-3px)' : 'none',
         overflow: 'hidden',
       }}>
       {/* accent glow on hover */}

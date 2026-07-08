@@ -32,15 +32,18 @@ function ProjectCard({ p }) {
       style={{
         position: 'relative',
         padding: '28px 28px 26px',
-        borderRadius: 14,
-        border: '1px solid var(--border-strong)',
-        background: 'linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.005))',
-        backdropFilter: 'blur(14px)',
-        WebkitBackdropFilter: 'blur(14px)',
+        borderRadius: 18,
+        border: hovered ? '1px solid rgba(50,205,50,0.28)' : '1px solid rgba(255,255,255,0.09)',
+        background: hovered ? 'rgba(255,255,255,0.055)' : 'rgba(255,255,255,0.03)',
+        backdropFilter: 'blur(48px) saturate(200%)',
+        WebkitBackdropFilter: 'blur(48px) saturate(200%)',
+        boxShadow: hovered
+          ? '0 28px 70px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(0,0,0,0.1)'
+          : '0 10px 40px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1)',
         overflow: 'hidden',
         cursor: 'pointer',
-        transition: 'border-color .3s, transform .3s',
-        borderColor: hovered ? 'var(--accent-glow)' : 'var(--border-strong)',
+        transition: 'all .3s ease',
+        transform: hovered ? 'translateY(-4px)' : 'none',
       }}>
 
       {/* corner glow */}

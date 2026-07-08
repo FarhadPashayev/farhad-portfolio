@@ -33,6 +33,11 @@ function App() {
 
   return (
     <>
+      {/* ambient orbs */}
+      <div className="orb orb-1" aria-hidden />
+      <div className="orb orb-2" aria-hidden />
+      <div className="orb orb-3" aria-hidden />
+
       {/* mouse-follow glow */}
       <div ref={glowRef} aria-hidden style={{
         position: 'fixed', top: 0, left: 0, width: 600, height: 600,

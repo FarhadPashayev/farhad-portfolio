@@ -28,7 +28,7 @@ function Hero() {
   const advance = React.useCallback(() => setStep(s => s + 1), []);
 
   return (
-    <section id="top" style={{ position: 'relative', paddingTop: 140, paddingBottom: 120, overflow: 'hidden' }}>
+    <section id="top" style={{ position: 'relative', paddingTop: 160, paddingBottom: 120, overflow: 'hidden' }}>
       {/* ambient accent glow */}
       <div aria-hidden style={{
         position: 'absolute', top: -120, left: '50%', transform: 'translateX(-50%)',
@@ -41,7 +41,15 @@ function Hero() {
 
         {/* small status bar */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'Geist Mono', fontSize: 11, color: 'var(--text-mute)', marginBottom: 32 }}>
-          <span style={{ padding: '4px 10px', border: '1px solid var(--border-strong)', borderRadius: 999, background: 'rgba(255,255,255,0.02)', color: 'var(--text-dim)' }}>
+          <span style={{
+            padding: '5px 12px', borderRadius: 999,
+            background: 'rgba(255,255,255,0.04)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            border: '1px solid rgba(255,255,255,0.1)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)',
+            color: 'var(--text-dim)',
+          }}>
             QA Automation Engineer
           </span>
           <span>·</span>
@@ -114,7 +122,17 @@ function Hero() {
             </div>
 
             {/* small stats strip */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0, marginTop: 64, borderTop: '1px solid var(--border)', paddingTop: 28 }}>
+            <div style={{
+              display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0,
+              marginTop: 48,
+              padding: '20px 24px',
+              borderRadius: 14,
+              background: 'rgba(255,255,255,0.03)',
+              backdropFilter: 'blur(32px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(32px) saturate(180%)',
+              border: '1px solid rgba(255,255,255,0.08)',
+              boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1), 0 8px 32px rgba(0,0,0,0.3)',
+            }}>
               {[
                 { k: '4+', v: 'Years in QA' },
                 { k: '12k+', v: 'Tests automated' },
@@ -145,12 +163,12 @@ function Hero() {
 function TerminalCard({ step, advance }) {
   return (
     <div style={{
-      borderRadius: 12,
-      border: '1px solid var(--border-strong)',
-      background: 'linear-gradient(180deg, rgba(16,20,27,0.7), rgba(11,14,19,0.9))',
-      backdropFilter: 'blur(20px)',
-      WebkitBackdropFilter: 'blur(20px)',
-      boxShadow: '0 30px 80px -20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04)',
+      borderRadius: 16,
+      border: '1px solid rgba(255,255,255,0.09)',
+      background: 'rgba(8,11,16,0.6)',
+      backdropFilter: 'blur(48px) saturate(200%)',
+      WebkitBackdropFilter: 'blur(48px) saturate(200%)',
+      boxShadow: '0 32px 80px -16px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(0,0,0,0.15)',
       overflow: 'hidden',
       marginTop: 12,
     }}>
