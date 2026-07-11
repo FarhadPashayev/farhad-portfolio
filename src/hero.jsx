@@ -121,7 +121,7 @@ function Hero() {
               </a>
             </div>
 
-            {/* small stats strip */}
+            {/* small stats strip — data from CV */}
             <div style={{
               display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 0,
               marginTop: 48,
@@ -135,8 +135,8 @@ function Hero() {
             }}>
               {[
                 { k: '4+', v: 'Years in QA' },
-                { k: '12k+', v: 'Tests automated' },
-                { k: '5.2k', v: 'Peak VUs handled' },
+                { k: '17+', v: 'Bank integrations tested' },
+                { k: '5.2k', v: 'Peak VUs — JMeter' },
               ].map((s, i) => (
                 <div key={i} style={{ borderLeft: i === 0 ? 'none' : '1px solid var(--border)', paddingLeft: i === 0 ? 0 : 24 }}>
                   <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: '-0.02em' }}>{s.k}</div>

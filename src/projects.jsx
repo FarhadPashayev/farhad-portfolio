@@ -8,7 +8,7 @@ function Projects() {
           num="01"
           label="Project Showcase"
           title={<>Selected work.<br/>Systems under pressure.</>}
-          subtitle="Four frameworks I've built or led — each solving a specific pain point at scale. Metrics are real; details that are under NDA have been abstracted."
+          subtitle="Five projects across fintech, ERP and government sectors — each solving a specific pain point at scale. Metrics are real; details under NDA have been abstracted."
         />
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }} className="projects-grid">

@@ -40,7 +40,7 @@ function Contact() {
                 Current status
               </div>
               <div style={{ fontSize: 15, color: 'var(--text)', lineHeight: 1.5 }}>
-                Accepting new engagements for <span style={{ color: 'var(--accent)' }}>Q3 2026</span>. Remote-first, open to Baku / Istanbul / EU time zones.
+                Currently at <span style={{ color: 'var(--accent)' }}>Azericard</span>. Open to new opportunities — remote-first, available for Baku / Istanbul / EU time zones.
               </div>
             </div>
           </div>
@@ -94,8 +94,8 @@ function Contact() {
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
           fontFamily: 'Geist Mono', fontSize: 11, color: 'var(--text-mute)', flexWrap: 'wrap', gap: 12,
         }}>
-          <span>© 2026 Farhad Pashayev · Built with care in Baku</span>
-          <span>Last deploy: <span style={{ color: 'var(--accent)' }}>● passed</span> · main@f4ab921</span>
+          <span>© 2026 Farhad Pashayev · Built with care in Baku, AZ</span>
+          <span><span style={{ color: 'var(--accent)' }}>●</span> Open to work · +994 51 468 90 54</span>
         </div>
       </div>
       <style>{`
