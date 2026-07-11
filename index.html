@@ -55,7 +55,11 @@
 
     /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
     body {
       background: var(--bg);
       color: var(--text);
@@ -64,6 +68,12 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    /* ── Mobile responsive helpers ── */
+    @media (max-width: 600px) {
+      section { padding-left: 20px !important; padding-right: 20px !important; }
     }
     a { color: inherit; text-decoration: none; }
     button { font-family: inherit; }
@@ -109,6 +119,8 @@
       filter: blur(80px);
       pointer-events: none;
       z-index: 0;
+      /* Contain orbs so they never cause horizontal scroll */
+      max-width: 100vw;
     }
     .orb-1 {
       top: -15vh; left: -10vw;
@@ -116,9 +128,10 @@
       background: radial-gradient(closest-side, rgba(50,205,50,0.13), transparent);
     }
     .orb-2 {
-      top: 10vh; right: -15vw;
-      width: 50vw; height: 50vw;
+      top: 10vh; right: 0;
+      width: 40vw; height: 40vw;
       background: radial-gradient(closest-side, rgba(30,80,200,0.09), transparent);
+      transform: translateX(30%);
     }
     .orb-3 {
       bottom: -10vh; left: 20vw;

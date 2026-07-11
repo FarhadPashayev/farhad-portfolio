@@ -82,6 +82,12 @@ function Contact() {
           </form>
         </div>
 
+        <style>{`
+          @media (max-width: 860px) {
+            .contact-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
+
         {/* footer */}
         <div style={{
           marginTop: 80, paddingTop: 24, borderTop: '1px solid var(--border)',

@@ -38,8 +38,8 @@ function App() {
       <div className="orb orb-2" aria-hidden />
       <div className="orb orb-3" aria-hidden />
 
-      {/* mouse-follow glow */}
-      <div ref={glowRef} aria-hidden style={{
+      {/* mouse-follow glow — hidden on touch/mobile (no cursor) */}
+      <div ref={glowRef} aria-hidden className="mouse-glow" style={{
         position: 'fixed', top: 0, left: 0, width: 600, height: 600,
         pointerEvents: 'none', zIndex: 1,
         background: 'radial-gradient(circle, var(--accent-dim) 0%, transparent 60%)',
@@ -48,6 +48,9 @@ function App() {
         willChange: 'transform',
         mixBlendMode: 'screen',
       }} />
+      <style>{`
+        @media (max-width: 900px) { .mouse-glow { display: none !important; } }
+      `}</style>
       <window.Nav />
       <window.Hero />
       <window.Projects />

@@ -166,7 +166,7 @@ function FeaturedProjectCard({ p }) {
   const [hovered, setHovered] = React.useState(false);
   return (
     <article
-      className="stagger"
+      className="stagger featured-card"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -189,6 +189,11 @@ function FeaturedProjectCard({ p }) {
         gap: 48,
         alignItems: 'center',
       }}>
+      <style>{`
+        @media (max-width: 900px) {
+          .featured-card { grid-template-columns: 1fr !important; gap: 28px !important; padding: 24px 20px !important; }
+        }
+      `}</style>
 
       {/* ambient glow */}
       <div aria-hidden style={{
